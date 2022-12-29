@@ -1,0 +1,30 @@
+<div fxLayout="row" fxLayoutAlign="start center" mat-dialog-title class="px-6 py-4 bg-primary">
+    <h2 class="title m-0 text-white" fxFlex = "auto"> {{unicorn?.name || 'Formulario' }} </h2>
+
+</div>
+
+<mat-divider class="mx-6 text-border"></mat-divider>
+
+<mat-dialog-content class="px-6 py-4" fxLayout="column" fxLayoutAlign="start center">
+   <mat-card class="w-100">
+
+    <mat-card-content>
+        <form class="example-container" #ngForm="ngForm">
+
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Nombre" [(ngModel)]="unicorn.name" name="name" #name="ngModel" required>
+              </mat-form-field>
+              <mat-form-field class="w-100">
+                <input matInput placeholder="Edad" [(ngModel)]="unicorn.age" name="age" #age="ngModel" required type="number">
+              </mat-form-field>
+              <mat-form-field class="w-100">
+                <input matInput placeholder="Color" [(ngModel)]="unicorn.colour" name="color" #color="ngModel" required>
+              </mat-form-field>
+        </form>
+    </mat-card-content>
+
+<mat-dialog-actions aling="end">
+  <button mat-button type="button" (click)="guardar()" [disabled]="ngForm.invalid">Guardar</button>
+  <button mat-button mat-dialog-close type="button"  cdkFocusInitial color="warn" (click)="cerrarVentana()"  >Cancelar</button>
+</mat-dialog-actions>
+

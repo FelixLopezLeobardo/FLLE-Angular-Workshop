@@ -1,0 +1,30 @@
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 cold-md6 col-lg-4 p-5">
+            <div class="card">
+                <div class="card-body">
+                       <form>
+                        <div class="mb-3">
+                        <mat-form-field>
+                            <mat-label>Usuario</mat-label>
+                            <input matInput [(ngModel)]="user.usuario" name="usuario" >
+                        </mat-form-field>
+                        </div>
+            
+                        <div class="mb-3">
+                            <mat-form-field>
+                                <mat-label>Contraseña</mat-label>
+                                <input matInput [(ngModel)]="user.password" name="pass" type="password">
+                            </mat-form-field>
+                        </div>
+                    
+                        <button type="submit"  mat-raised-button color="primary" (click)="login() ">Entrar</button>
+                       </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

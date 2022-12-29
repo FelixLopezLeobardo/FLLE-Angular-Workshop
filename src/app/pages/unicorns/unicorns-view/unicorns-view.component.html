@@ -1,0 +1,19 @@
+<div fxLayout="row" fxLayoutAlign="start center" mat-dialog-title>
+    <h2 class="title m-0" fxFlex = "auto"> {{unicorn?.name}} </h2>
+   </div>
+
+<mat-divider   class="mx-6 text-border" >   </mat-divider>
+<mat-dialog-content class="my-6" fxLayout="column">
+    <mat-card class="example-card">
+        <mat-card-title> {{ unicorn?.name}}  </mat-card-title>
+        <mat-card-title> {{ unicorn?.age}}   </mat-card-title>
+        <mat-card-title> {{unicorn?.colour}} </mat-card-title>
+    </mat-card>
+</mat-dialog-content>
+
+<mat-divider   class="mx-6 text-border" >   </mat-divider>
+<mat-dialog-actions align="end">
+
+    <button cdkFocusInitial color="warn" mat-button mat-dialog-close type="button" (click)="cerrarVentana()" >Close</button>
+
+</mat-dialog-actions>

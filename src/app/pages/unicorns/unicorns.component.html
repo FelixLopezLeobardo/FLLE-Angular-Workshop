@@ -1,0 +1,44 @@
+<div>
+    <div class="row">
+        <div class="row">
+              <div class="card-body">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="age">
+                    <th mat-header-cell *matHeaderCellDef> Edad </th>
+                    <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="colour">
+                    <th mat-header-cell *matHeaderCellDef> Color </th>
+                    <td mat-cell *matCellDef="let element"> {{element.colour}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                    <td mat-cell *matCellDef="let element">
+                      <button  class="btn btn-primary"
+                        (click)="verUnicornio(element)">
+                      Ver unicornio
+                      </button>
+                      <button  class="btn btn-primary" 
+                        (click)="editarUnicornio(element)">
+                        Editar unicornio
+                      </button>
+                      <button  class="btn btn-primary" mat-raised-button color="primary" 
+                        (click)="borrarUnicornio(element._id)">
+                        Eliminar unicornio
+                      </button>
+                    </td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="cabeceraTabla"></tr>
+                  <tr mat-row *matRowDef="let row; columns: cabeceraTabla;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                  aria-label="Select page of unicorns"></mat-paginator>
+              </div>
+      </div>
+      <button class="btn btn-primary" style="width : 10em;margin: 2%;" (click)="crearUnicornio()">Crear usuario</button>
+    </div>
+  </div>    
